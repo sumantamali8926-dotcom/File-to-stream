@@ -192,7 +192,7 @@ def mask_filename(name: str):
 async def start_command(client: Client, message: Message):
     user_id = message.from_user.id
     user_name = message.from_user.first_name
-    
+    print(f"START RECEIVED {message.from_user.id}")
     if len(message.command) > 1 and message.command[1].startswith("verify_"):
         unique_id = message.command[1].split("_", 1)[1]
         
