@@ -187,7 +187,9 @@ def mask_filename(name: str):
 # =====================================================================================
 # --- PYROGRAM BOT HANDLERS ---
 # =====================================================================================
-
+@bot.on_message(filters.all, group=-1)
+async def catch_all_debug(client, message):
+    print(f"ANY MSG RECEIVED from {message.chat.id}")
 @bot.on_message(filters.command("start") & filters.private)
 async def start_command(client: Client, message: Message):
     user_id = message.from_user.id
